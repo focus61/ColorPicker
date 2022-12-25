@@ -8,4 +8,7 @@
 struct Color {
     let hex: String
     let description: String
+    let red: Float
+    let green: Float
+    let blue: Float
 }

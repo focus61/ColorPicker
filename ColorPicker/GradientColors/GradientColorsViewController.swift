@@ -10,8 +10,6 @@ import UIKit
 class GradientColorsViewController: UITabBarController {
     private let colorPickerTableView: ColorPickerTableView = .init(frame: .zero, style: .plain)
     private var gradientsArray: [GradientColor] = [
-        GradientColor(selectedColors: [Color(hex: "#94BD3F", description: "yellow green"), Color(hex: "#76D3AC", description: "blue green"), Color(hex: "#E25F39", description: "red orange"), Color(hex: "#A1F86D", description: "light green")], isFavorite: false),
-        GradientColor(selectedColors: [Color(hex: "#B55A48", description: "red"), Color(hex: "#5A7040", description: "green"), Color(hex: "#8E6AF8", description: "purple")], isFavorite: false)
     ]
 
 

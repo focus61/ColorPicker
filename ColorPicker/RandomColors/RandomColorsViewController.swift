@@ -14,9 +14,11 @@ final class RandomColorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Random colors"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
         let backItem = UIBarButtonItem(title: nil, style: .plain, target: self, action: nil)
-        backItem.tintColor = .black
+        backItem.tintColor = UIColor(dynamicProvider: { trait in
+            trait.userInterfaceStyle == .dark ? .white : .black
+        })
         navigationItem.backBarButtonItem = backItem
         view.backgroundColor = UIColor(dynamicProvider: { trait in
             trait.userInterfaceStyle == .dark ? .black : .white
@@ -73,22 +75,40 @@ final class RandomColorsViewController: UIViewController {
         var colors: [Color] = []
         for _ in 1...10 {
             let color = randomColor()
-            let titleColor = color.accessibilityName
-            let hexToColor = hexStringFromColor(color: color)
+            let titleColor = color.0.accessibilityName
+            let red = color.1
+            let blue = color.2
+            let green = color.3
+            let hexToColor = hexStringFromColor(color: color.0)
             colors.append(
-                Color(hex: hexToColor, description: titleColor)
+                Color(
+                    hex: hexToColor,
+                    description: titleColor,
+                    red: Float(red),
+                    green: Float(green),
+                    blue: Float(blue)
+                )
             )
         }
         colorArray = colors
         colorPickerTableView.reloadData()
 
     }
-    private func randomColor() -> UIColor {
-        return UIColor(
-            red: .random(in: 0...1),
-            green: .random(in: 0...1),
-            blue: .random(in: 0...1),
-            alpha: 1
+    ///Return randomColor, red, green, blue
+    private func randomColor() -> (UIColor, CGFloat, CGFloat, CGFloat) {
+        let red: CGFloat = .random(in: 0...1)
+        let green: CGFloat = .random(in: 0...1)
+        let blue: CGFloat = .random(in: 0...1)
+        return (
+            UIColor(
+                red: red,
+                green: green,
+                blue: blue,
+                alpha: 1
+            ),
+            red,
+            green,
+            blue
         )
     }
     private func hexStringFromColor(color: UIColor) -> String {
@@ -130,7 +150,15 @@ extension RandomColorsViewController: UITableViewDelegate, UITableViewDataSource
         let currentColorData = colorArray[indexPath.row]
         let currentColor = hexToColor(currentColorData.hex)
         let detailViewController = ColorDetailViewController()
-        detailViewController.selectedColorInfo(color: currentColor, title: currentColorData.description)
+        detailViewController.selectedColorInfo(
+            color: currentColor,
+            title: currentColorData.description,
+            hex: currentColorData.hex,
+            red: currentColorData.red,
+            green: currentColorData.green,
+            blue: currentColorData.blue
+        )
+        detailViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     private func hexToColor(_ hex: String) -> UIColor {

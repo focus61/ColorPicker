@@ -20,6 +20,9 @@
 		1F70D5AA2954A51E00223934 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70D5A92954A51E00223934 /* CustomColor.swift */; };
 		1F70D5AE2954AD1200223934 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70D5AD2954AD1200223934 /* ColorDetailViewController.swift */; };
 		1F70D5B02954FA6F00223934 /* NoteForProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70D5AF2954FA6F00223934 /* NoteForProject.swift */; };
+		1FA0BC782957705100B4F0C7 /* RGBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0BC772957705100B4F0C7 /* RGBView.swift */; };
+		1FA0BC7A295772C300B4F0C7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0BC79295772C300B4F0C7 /* DetailView.swift */; };
+		1FA0BC7C29577A8000B4F0C7 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA0BC7B29577A8000B4F0C7 /* LineView.swift */; };
 		1FE5385829562D9B008EE9E2 /* GradientColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5385729562D9B008EE9E2 /* GradientColorsViewController.swift */; };
 		1FE5385A29562DE7008EE9E2 /* GradientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5385929562DE7008EE9E2 /* GradientColor.swift */; };
 		1FE5385C29562F10008EE9E2 /* ColorsTableViewCellWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5385B29562F10008EE9E2 /* ColorsTableViewCellWithShadow.swift */; };
@@ -42,6 +45,9 @@
 		1F70D5A92954A51E00223934 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		1F70D5AD2954AD1200223934 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
 		1F70D5AF2954FA6F00223934 /* NoteForProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteForProject.swift; sourceTree = "<group>"; };
+		1FA0BC772957705100B4F0C7 /* RGBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBView.swift; sourceTree = "<group>"; };
+		1FA0BC79295772C300B4F0C7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1FA0BC7B29577A8000B4F0C7 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		1FE5385729562D9B008EE9E2 /* GradientColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColorsViewController.swift; sourceTree = "<group>"; };
 		1FE5385929562DE7008EE9E2 /* GradientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientColor.swift; sourceTree = "<group>"; };
 		1FE5385B29562F10008EE9E2 /* ColorsTableViewCellWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsTableViewCellWithShadow.swift; sourceTree = "<group>"; };
@@ -80,7 +86,6 @@
 			children = (
 				1FE5385629562D88008EE9E2 /* GradientColors */,
 				1F4830F229548CAF00618EE8 /* AppDelegate.swift */,
-				1F70D5AC2954ACFA00223934 /* ColorDetail */,
 				1F4830F429548CAF00618EE8 /* SceneDelegate.swift */,
 				1F70D5AB2954ACCA00223934 /* RandomColors */,
 				1F4830F829548CAF00618EE8 /* Main.storyboard */,
@@ -97,6 +102,7 @@
 		1F70D5AB2954ACCA00223934 /* RandomColors */ = {
 			isa = PBXGroup;
 			children = (
+				1F70D5AC2954ACFA00223934 /* ColorDetail */,
 				1F4830F629548CAF00618EE8 /* RandomColorsViewController.swift */,
 				1F70D5A72954A3C000223934 /* ColorModel.swift */,
 				1F70D5A52954990500223934 /* ColorPickerTableViewCell.swift */,
@@ -108,6 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				1F70D5AD2954AD1200223934 /* ColorDetailViewController.swift */,
+				1FA0BC772957705100B4F0C7 /* RGBView.swift */,
+				1FA0BC7B29577A8000B4F0C7 /* LineView.swift */,
+				1FA0BC79295772C300B4F0C7 /* DetailView.swift */,
 			);
 			path = ColorDetail;
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA0BC782957705100B4F0C7 /* RGBView.swift in Sources */,
 				1F4830F729548CAF00618EE8 /* RandomColorsViewController.swift in Sources */,
 				1F70D5AA2954A51E00223934 /* CustomColor.swift in Sources */,
 				1F1725E52955F0B100AF4B19 /* MainTabBarController.swift in Sources */,
@@ -211,11 +221,13 @@
 				1F4830F329548CAF00618EE8 /* AppDelegate.swift in Sources */,
 				1FE5385829562D9B008EE9E2 /* GradientColorsViewController.swift in Sources */,
 				1FE5385C29562F10008EE9E2 /* ColorsTableViewCellWithShadow.swift in Sources */,
+				1FA0BC7A295772C300B4F0C7 /* DetailView.swift in Sources */,
 				1FE5385E29562F96008EE9E2 /* GradientColorTableViewCell.swift in Sources */,
 				1FE5385A29562DE7008EE9E2 /* GradientColor.swift in Sources */,
 				1F48310729548CE000618EE8 /* ColorPickerTableView.swift in Sources */,
 				1F4830F529548CAF00618EE8 /* SceneDelegate.swift in Sources */,
 				1F70D5A82954A3C000223934 /* ColorModel.swift in Sources */,
+				1FA0BC7C29577A8000B4F0C7 /* LineView.swift in Sources */,
 				1F70D5B02954FA6F00223934 /* NoteForProject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
